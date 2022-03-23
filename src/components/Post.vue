@@ -3,7 +3,9 @@ import {ref} from "vue"
 
 const props = defineProps({
         'post' : {type : Object, require: true},
-})
+});
+
+const baseUrl = window.location.href;
 const post = props.post!;
 
 const liked = ref(false);
@@ -28,7 +30,7 @@ const readMore = ref(true);
     <PostItem>
         <div class="post">
             <div class="header">
-                <img class="profile-pic" :src="post.profile">
+                <img class="profile-pic" :src="baseUrl+post.profile">
 
                 <div class="profile-attr">
                     <span class="profile-user">{{post.user}}</span>
@@ -38,9 +40,9 @@ const readMore = ref(true);
                 <font-awesome-icon id="dots" :icon="['fas', 'ellipsis-h']" />
             </div>
         <div class="body">
-            <img v-if="post.content[0].type == 'image'" class="post-img" v-bind:src="post.content[0].source">
+            <img v-if="post.content[0].type == 'image'" class="post-img" v-bind:src="baseUrl+post.content[0].source">
             <div class="video-player" v-if="post.content[0].type == 'video'">
-                <video class="post-img" :src="post.content[0].source"  ref="video"></video>
+                <video class="post-img" :src="baseUrl+post.content[0].source"  ref="video"></video>
                 <font-awesome-icon id="play"  @click="togglePlay" :icon="['fas', isPlaying ? 'pause' : 'play']" />
             </div>
             <div class="icons">
