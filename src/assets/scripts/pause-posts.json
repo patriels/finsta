@@ -1,0 +1,18 @@
+{
+    "posts" :[
+        {
+            "type" : "video",
+            "source" : "src/assets/pause-posts/breathing_bubble.mp4",
+            "caption" : "Follow along with the bubble to help calm your breath.",
+            "likes" : 500
+
+        },
+        {
+            "type" : "video",
+            "source" : "src/assets/pause-posts/guided_meditation.mp4",
+            "caption" : "Let's take a moment to clear our mind and meditate.",
+            "likes" : 145
+
+        }
+    ]
+}
