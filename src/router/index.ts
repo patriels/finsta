@@ -11,7 +11,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/pause',
+      path: '/finsta/pause',
       name: 'pause',
       component: AboutView
     }
