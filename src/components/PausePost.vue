@@ -5,6 +5,8 @@ import { ref, onMounted, onUnmounted } from "vue"
             'post' : {type : Object, require: true},
     })
     const post = props.post!;
+
+    const baseUrl = import.meta.env.BASE_URL;
     
     const liked = ref(false);
 
@@ -38,9 +40,9 @@ import { ref, onMounted, onUnmounted } from "vue"
                 <font-awesome-icon id="dots" :icon="['fas', 'ellipsis-h']" />
             </div>
         <div class="body">
-            <img v-if="post.type == 'image'" class="post-img" :src="post.source">
+            <img v-if="post.type == 'image'" class="post-img" :src="baseUrl+post.source">
             <div class="video-player" v-if="post.type == 'video'">
-                <video class="post-img" :src="post.source"  ref="video"></video>
+                <video class="post-img" :src="baseUrl+post.source"  ref="video"></video>
                 <font-awesome-icon id="play"  @click="togglePlay" :icon="['fas', isPlaying ? 'pause' : 'play']" />
             </div>
             <div class="icons">

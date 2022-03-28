@@ -5,7 +5,7 @@ const props = defineProps({
         'post' : {type : Object, require: true},
 });
 
-const baseUrl = window.location.href;
+const baseUrl = import.meta.env.BASE_URL;
 const post = props.post!;
 
 const liked = ref(false);
