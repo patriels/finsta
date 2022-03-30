@@ -66,6 +66,8 @@ import { ref, onMounted, onUnmounted } from "vue"
     margin: auto;
     border: #0000002b 1px solid;
     margin-bottom: 10px;
+    background: #63a7b7;
+    color: white;
 }
 .post .header{
     display: flex;
@@ -85,10 +87,10 @@ import { ref, onMounted, onUnmounted } from "vue"
     margin-left: 20px;
     margin-top: 13px;
     width: 80%;
+    text-align: center;
 }
 
 .post .header #dots{
-    color: rgb(0, 0, 0);
     transform: rotate(90deg);
 }
 
