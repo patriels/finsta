@@ -2,7 +2,7 @@
     "posts" :[
     {
         "user" : "guardian",
-        "profile": "public/images/Posts/profile-pics/guardian-logo.jpg",
+        "profile": "/images/Posts/profile-pics/guardian-logo.jpg",
         "location" : "",
         "content" : [
             {"type" : "image",
