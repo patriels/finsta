@@ -1,77 +1,116 @@
 <script setup lang="ts">
-import {ref} from "vue"
+    import {ref, onMounted, onUnmounted, reactive} from "vue"
+    //import 'vue3-carousel/dist/carousel.css';
+    import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
-const props = defineProps({
-        'post' : {type : Object, require: true},
-});
+    const props = defineProps({
+            'post' : {type : Object, require: true},
+            'pause' : {type : Boolean, require : true}
+    });
+ 
+    const baseUrl = import.meta.env.BASE_URL;
+    const post = props.post!;
+    const pause = props.pause!;
 
-const baseUrl = import.meta.env.BASE_URL;
-const post = props.post!;
-
-const liked = ref(false);
-const isPlaying = ref(false);
-
-const video = ref(null)
-
-const togglePlay = () => {
-    let element : HTMLVideoElement = video.value!;
-    if(!isPlaying.value){
-        element.play();
-    }else{
-       element.pause();
-    }
-    isPlaying.value = !isPlaying.value;
-}
-
-const readMore = ref(true);
-
+    const liked = ref(false);
+    const readMore = ref(true);
 </script>
 <template>
     <PostItem>
-        <div class="post">
+        <div class="post" :class="{'pause-post' : pause}">
             <div class="header">
-                <img class="profile-pic" :src="baseUrl+post.profile">
+                <img class="profile-pic" :src="!pause ? baseUrl+post.profile : baseUrl+'images/finsta_pastel_logo.jpg'">
 
                 <div class="profile-attr">
-                    <span class="profile-user">{{post.user}}</span>
-                    <span class="profile-location">{{post.location}}</span>
+                    <span class="profile-user">{{!pause ? post.user : 'Mindfulness Break'}}</span>
+                    <span v-if="!pause" class="profile-location">{{post.location}}</span>
                 </div>
 
-                <font-awesome-icon id="dots" :icon="['fas', 'ellipsis-h']" />
+                <!--<font-awesome-icon id="dots" :icon="['fas', 'ellipsis-h']" />-->
             </div>
         <div class="body">
-            <img v-if="post.content[0].type == 'image'" class="post-img" v-bind:src="baseUrl+post.content[0].source">
-            <div class="video-player" v-if="post.content[0].type == 'video'">
-                <video class="post-img" :src="baseUrl+post.content[0].source"  ref="video"></video>
-                <font-awesome-icon id="play"  @click="togglePlay" :icon="['fas', isPlaying ? 'pause' : 'play']" />
-            </div>
+            <carousel :items-to-show="1">
+                <slide v-for="(slide,index) in post.content" :key="index">
+                    <div class="carousel__item">
+                        <img v-if="slide.type == 'image'" class="post-img" v-bind:src="baseUrl+slide.source">
+                        <div class="video-player" v-if="slide.type == 'video'">
+                            <video controls class="post-img" :src="baseUrl+slide.source"  :id="'video_'+index"></video>
+                        </div>
+                    </div>
+                </slide>
+                <template #addons="{ slidesCount, currentSlide  }">
+                    <navigation v-if="slidesCount > 1" :class="{ 'is-first-slide': !currentSlide, 'is-last-slide':  currentSlide ===  slidesCount - 1 }"/>
+                    <pagination v-if="slidesCount > 1"/>
+                </template>
+            </carousel>
             <div class="icons">
                 <font-awesome-icon @click="liked = !liked" id="heart" :class="{filled : liked }" v-bind:icon="[ liked ? 'fas' : 'far' , 'heart']" />
-                <font-awesome-icon id="comment" :icon="['far', 'comment']" />
+                <!--<font-awesome-icon id="comment" :icon="['far', 'comment']" />
                 <font-awesome-icon id="send" :icon="['far', 'paper-plane']" />
-                <font-awesome-icon id="bookmark" :icon="['far', 'bookmark']" />
+                <font-awesome-icon id="bookmark" :icon="['far', 'bookmark']" />-->
 
             </div>
         </div>
         <div class="footer">
-            <p class="likes">{{post.likes + (liked ? 1 : 0)}}</p>
-            <p class="caption">
+            <p v-if="!pause" class="caption">
                 <span class="username">{{post.user}}</span>
                 <span v-if="readMore">{{post.caption.slice(0, 100)}}</span>
                 <span v-if="!readMore">{{post.caption}}</span>
                 <span class="read-more" v-if="readMore" @click="readMore = !readMore">..more</span>
             </p>
+            <p v-else class="caption">{{post.caption}}</p>
         </div>
         </div>
     </PostItem>
 </template>
+<style>
+@import "vue3-carousel/dist/carousel.css";
+.carousel__prev,.carousel__next{
+    color: ffffff85;
+    background: #80808085;
+    transform: none;
+}
 
+.carousel__prev:hover,.carousel__next:hover{
+    color: #fff;
+    background: grey;
+}
+.carousel__prev{
+    margin-left: 0.75%;
+}
+.carousel__next{
+    margin-right: 0.75%;
+}
+.carousel__pagination-button{
+    background: grey;
+}
+.carousel__pagination-button--active {
+  background-color: darkgrey;
+}
+
+.carousel__item{
+    width: 100%;
+}
+
+.is-first-slide.carousel__prev,.is-last-slide.carousel__next{
+    display: none;
+}
+
+.carousel__pagination{
+    margin: 0;
+}
+</style>
 <style scoped>
 .post{
     max-width: 500px;
     margin: auto;
     border: #0000002b 1px solid;
     margin-bottom: 10px;
+}
+
+.post.pause-post{
+    background: #63a7b7;
+    color: #fff;
 }
 .post .header{
     display: flex;
@@ -108,7 +147,7 @@ const readMore = ref(true);
 
 .post .body .post-img{
     width: 100%;
-    max-height: 31rem;
+    max-height: 70vh;
     object-fit: cover;
 }
 
@@ -185,4 +224,5 @@ const readMore = ref(true);
 .post .body .post-img{
     width: 100%;
 }
+
 </style>

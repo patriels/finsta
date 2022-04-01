@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue"
   import getPosts from '@/assets/scripts/post-loader'
-  import PostType from "@/components/PostServer.vue"
+  import PostItem from "@/components/Post.vue"
 
-  const posts = ref(getPosts(4, true));
+  const limit = 4
+  const posts = ref(getPosts(limit, true));
 
   const scrollComponent = ref(null)
 
   const loadMorePosts = () => {
-    let newPosts = getPosts(4, true);
+    let newPosts = getPosts(limit, true);
     posts.value.push(...newPosts);
   }
 
@@ -34,7 +35,7 @@ import { ref, onMounted, onUnmounted } from "vue"
   </header>
   <main>
     <div class="scrolling-container" ref="scrollComponent">
-        <PostType v-for="(post,index) in posts" :key="index" :post="post" :id="index"/>
+        <PostItem v-for="(post,index) in posts" :key="index" :post="post" :pause="(index + 1) % (limit+1) == 0"/>
     </div>
   </main>
 </template>

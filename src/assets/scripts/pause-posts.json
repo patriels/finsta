@@ -1,17 +1,141 @@
 {
     "posts" :[
         {
-            "type" : "video",
-            "source" : "/pause-posts/breathing_bubble.mp4",
+            "content" : [
+                {"type" : "video",
+                "source" : "/pause-posts/breathing_bubble.mp4"
+                }
+            ],
             "caption" : "Follow along with the bubble to help calm your breath.",
             "likes" : 500
 
         },
         {
-            "type" : "video",
-            "source" : "/pause-posts/guided_meditation.mp4",
+            "content" : [
+                {"type" : "video",
+                "source" : "/pause-posts/guided_meditation.mp4"
+                }
+            ],
             "caption" : "Let's take a moment to clear our mind and meditate.",
             "likes" : 145
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_2/p_1.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_2/p_2.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_2/p_3.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_2/p_4.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_2/p_5.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_2/p_6.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and meditate.",
+            "likes" : 236
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_3/p_1.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_3/p_2.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_3/p_3.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_3/p_4.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_3/p_5.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_3/p_6.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_3/p_7.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_3/p_8.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_3/p_9.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_3/p_10.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and meditate.",
+            "likes" : 236
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_4/p_1.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_4/p_2.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_4/p_3.jpg"
+                },
+                {"type" : "image",
+                    "source" : "/pause-posts/pause_post_4/p_4.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and meditate.",
+            "likes" : 236
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_5/p_1.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and meditate.",
+            "likes" : 3214
+
+        },
+        {
+            "type" : "image",
+            "source" : "/pause-posts/pause_post_6/p_1.jpg",
+            "caption" : "Let's take a moment to clear our mind and meditate.",
+            "likes" : 756
+
+        },
+        {
+            "content" : [
+                {"type" : "video",
+                "source" : "/pause-posts/pause_post_1/square-breathing.mp4"
+                }
+            ],
+            "caption" : "Follow along with the bubble to help calm your breath.",
+            "likes" : 684
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/five_sense_grounding.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and meditate.",
+            "likes" : 7602
 
         }
     ]

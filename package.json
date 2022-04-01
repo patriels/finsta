@@ -12,8 +12,11 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.1.0",
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "@types/swiper": "^6.0.0",
     "vue": "^3.2.31",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "vue3-carousel": "^0.1.38",
+    "vueperslides": "^3.3.2"
   },
   "devDependencies": {
     "@types/node": "^16.11.26",
