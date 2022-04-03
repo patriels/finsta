@@ -35,7 +35,7 @@ import { ref, onMounted, onUnmounted } from "vue"
   </header>
   <main>
     <div class="scrolling-container" ref="scrollComponent">
-        <PostItem v-for="(post,index) in posts" :key="index" :post="post" :pause="(index + 1) % (limit+1) == 0"/>
+        <PostItem v-for="(post,index) in posts" :key="index" :post="post" :pause="(index + 1) % (limit+1) == 0" :id="index"/>
     </div>
   </main>
 </template>
