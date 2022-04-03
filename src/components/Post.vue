@@ -33,12 +33,12 @@
     }
 
     onMounted(() => {
-  	    //window.addEventListener("scroll", pauseVideos)
-        //videos = document.getElementsByClassName("video_"+id)
+  	    window.addEventListener("scroll", pauseVideos)
+        videos = document.getElementsByClassName("video_"+id)
     })
 
     onUnmounted(() => {
-  	   // window.removeEventListener("scroll", pauseVideos)
+  	   window.removeEventListener("scroll", pauseVideos)
     })
 </script>
 
