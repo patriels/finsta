@@ -112,8 +112,11 @@
 
         },
         {
-            "type" : "image",
-            "source" : "/pause-posts/pause_post_6/p_1.jpg",
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_6/p_1.jpg"
+                }
+            ],
             "caption" : "Let's take a moment to clear our mind and meditate.",
             "likes" : 756
 
