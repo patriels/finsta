@@ -5,19 +5,46 @@
 
     const props = defineProps({
             'post' : {type : Object, require: true},
-            'pause' : {type : Boolean, require : true}
+            'pause' : {type : Boolean, require : true},
+            'id' : {type: Number, require: true}
     });
  
     const baseUrl = import.meta.env.BASE_URL;
     const post = props.post!;
     const pause = props.pause!;
+    const id = props.id!;
 
     const liked = ref(false);
     const readMore = ref(true);
+
+    let videos : HTMLCollection;
+    const postItem = ref(null);
+    const pauseVideos = () => {
+        let element : HTMLDivElement = postItem.value!,
+            rect = element.getBoundingClientRect(),
+            windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+        if (rect.bottom <= (windowHeight - (windowHeight/2)))
+        {
+            for(let i = 0; i < videos.length; i++){
+                let vid = <HTMLVideoElement>videos[i]
+                vid.pause();
+            }
+        }
+    }
+
+    onMounted(() => {
+  	    window.addEventListener("scroll", pauseVideos)
+        videos = document.getElementsByClassName("video_"+id)
+    })
+
+    onUnmounted(() => {
+  	    window.removeEventListener("scroll", pauseVideos)
+    })
 </script>
+
 <template>
     <PostItem>
-        <div class="post" :class="{'pause-post' : pause}">
+        <div class="post" :class="{'pause-post' : pause}" ref="postItem">
             <div class="header">
                 <img class="profile-pic" :src="!pause ? baseUrl+post.profile : baseUrl+'images/finsta_pastel_logo.jpg'">
 
@@ -34,7 +61,7 @@
                     <div class="carousel__item">
                         <img v-if="slide.type == 'image'" class="post-img" v-bind:src="baseUrl+slide.source">
                         <div class="video-player" v-if="slide.type == 'video'">
-                            <video controls class="post-img" :src="baseUrl+slide.source"  :id="'video_'+index"></video>
+                            <video controls class="post-img" :class="'video_'+id" :src="baseUrl+slide.source"  :id="'video_'+index"></video>
                         </div>
                     </div>
                 </slide>

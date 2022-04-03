@@ -34,7 +34,7 @@ import { ref, onMounted, onUnmounted } from "vue"
   </header>
   <main>
     <div class="scrolling-container" ref="scrollComponent">
-      <PostItem v-for="(post,index) in postsN" :key="index" :post="post" :pause="false"/>
+      <PostItem v-for="(post,index) in postsN" :key="index" :post="post" :pause="false" :id="index"/>
     </div>
   </main>
 </template>
