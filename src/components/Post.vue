@@ -5,14 +5,15 @@
 
     const props = defineProps({
             'post' : {type : Object, require: true},
-            'pause' : {type : Boolean, require : true},
-            'id' : {type: Number, require: true}
+            'pause' : {type : Boolean, require : true}
+            /*,
+            'id' : {type: Number, require: true}*/
     });
  
     const baseUrl = import.meta.env.BASE_URL;
     const post = props.post!;
     const pause = props.pause!;
-    const id = props.id!;
+    /*const id = props.id!;*/
 
     const liked = ref(false);
     const readMore = ref(true);
@@ -61,7 +62,7 @@
                     <div class="carousel__item">
                         <img v-if="slide.type == 'image'" class="post-img" v-bind:src="baseUrl+slide.source">
                         <div class="video-player" v-if="slide.type == 'video'">
-                            <video controls class="post-img" :class="'video_'+id" :src="baseUrl+slide.source"  :id="'video_'+index"></video>
+                            <video controls class="post-img"  :src="baseUrl+slide.source"></video>
                         </div>
                     </div>
                 </slide>
