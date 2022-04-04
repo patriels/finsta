@@ -79,6 +79,7 @@
             </div>
         </div>
         <div class="footer">
+            <p class="likes">{{post.likes + (liked ? 1 : 0)}}</p>
             <p v-if="!pause" class="caption">
                 <span class="username">{{post.user}}</span>
                 <span v-if="readMore">{{post.caption.slice(0, 100)}}</span>

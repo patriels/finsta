@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from "vue"
   import getPosts from '@/assets/scripts/post-loader'
   import PostItem from "@/components/Post.vue"
 
-  const limit = 4
+  const limit = 7
   const posts = ref(getPosts(limit, true));
 
   const scrollComponent = ref(null)

@@ -244,7 +244,7 @@
     },
     {
         "user" : "wired",
-        "profile": "/images/profile-pics/wired_logo.jpg",
+        "profile": "/images/Posts/profile-pics/wired_logo.jpg",
         "location" : "",
         "content" : [
             {"type" : "video",
@@ -299,7 +299,7 @@
     },
     {
         "user" : "one7art",
-        "profile": "/images/Posts/profile-pics/one_arts_logo.jpg",
+        "profile": "/images/Posts/profile-pics/one_art_logo.jpg",
         "location" : "",
         "content" : [
             {"type" : "image",
@@ -453,7 +453,7 @@
     },
     {
         "user" : "introvertsmindset",
-        "profile": "/images/Posts/profile-pics/introvert_logo.jpg",
+        "profile": "/images/Posts/profile-pics/introvert_mindset_logo.jpg",
         "location" : "",
         "content" : [
             {"type" : "image",
@@ -662,7 +662,7 @@
     },
     {
         "user" : "cnn",
-        "profile": "/images/Posts/profile-pics/cnn_logo.jpg",
+        "profile": "/images/cnn-logo.jpg",
         "location" : "",
         "content" : [
             {"type" : "image",

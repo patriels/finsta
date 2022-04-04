@@ -3,12 +3,13 @@ import { ref, onMounted, onUnmounted } from "vue"
   import getPosts from '@/assets/scripts/post-loader'
   import PostItem from "@/components/Post.vue"
 
-  const postsN = ref(getPosts(4, false));
+  const limit = 7
+  const postsN = ref(getPosts(limit, false));
 
   const scrollComponent = ref(null);
 
   const loadMorePosts = () => {
-    let newPosts = getPosts(4 , false);
+    let newPosts = getPosts(limit , false);
     postsN.value.push(...newPosts);
   }
 
