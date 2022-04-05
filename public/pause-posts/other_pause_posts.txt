@@ -1,0 +1,86 @@
+These posts had to be pulled out because they stacked at the end of the scrolling
+
+
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_9/DeepBreath.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and practice deep breathing exercise.",
+            "likes" : 5802
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_10/4-7-8-Breathing.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and practice 4-7-8- breathing exercise.",
+            "likes" : 53602
+
+        },
+        {
+            "content" : [
+                {"type" : "video",
+                "source" : "/pause-posts/pause_post_11/4Breathing.mp4"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and practice the 4-breathing exercise.",
+            "likes" : 5982
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_12/BoxBreathing.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and practice box breathing exercise.",
+            "likes" : 3982
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_13/BodyScan.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and practice body scanning exercise.",
+            "likes" : 5482
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_14/BodyScan1.jpg"
+                }, 
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_14/BodyScan2.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and practice body scanning exercise.",
+            "likes" : 1128
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_15/Bodyscan.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and practice body scanning exercise.",
+            "likes" : 464
+
+        },
+        {
+            "content" : [
+                {"type" : "image",
+                "source" : "/pause-posts/pause_post_16/Bodyscan.jpg"
+                }
+            ],
+            "caption" : "Let's take a moment to clear our mind and practice body scanning exercise.",
+            "likes" : 9686
+
+        }
